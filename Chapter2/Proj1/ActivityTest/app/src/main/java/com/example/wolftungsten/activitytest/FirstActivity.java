@@ -1,5 +1,6 @@
 package com.example.wolftungsten.activitytest;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -18,7 +19,9 @@ public class FirstActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Toast.makeText(FirstActivity.this, "You clicked button1", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent("riku");
+                startActivity(intent);
+
             }
         });
     }

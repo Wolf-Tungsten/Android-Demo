@@ -1,0 +1,22 @@
+# OpenCV使用日记
+
+### 图像缩放
+
+载入的图片太大，需要缩小，使用 `resize()`方法可以达到目的。
+
+```C++
+resize(src,dst,Size(src.cols/4,src.rows/4),0,0,INTER_LINEAR);
+```
+
+最后一个参数是缩小的方法
+
+`CV_INTER_NN` - 最近邻插值。
+
+`CV_INTER_LINEAR` - 双线性插值 (缺省使用) 。
+
+`CV_INTER_AREA` - 使用象素关系重采样。当图像缩小时候，该方法可以避免波纹出现。当图像放大时，类似于 CV_INTER_NN 方法。
+
+`CV_INTER_CUBIC` - 立方插值。
+
+
+
