@@ -21,6 +21,7 @@
             <intent-filter>
                 <action android:name="riku"/>
                 <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="miaomiaomiao"/>
             </intent-filter>
         </activity>
     </application>
