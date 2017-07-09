@@ -1,6 +1,7 @@
 package com.example.wolftungsten.activitytest;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -19,8 +20,9 @@ public class FirstActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent = new Intent("riku");
-                intent.addCategory("miaomiaomiao");
+                String data = "Hello Activity！";
+                Intent intent =new Intent(FirstActivity.this, SecondActivity.class);
+                intent.putExtra("data", data);
                 startActivity(intent);
 
             }

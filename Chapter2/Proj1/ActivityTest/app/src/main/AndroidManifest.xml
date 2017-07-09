@@ -14,14 +14,23 @@
             android:label="This is FirstActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".SecondActivity">
             <intent-filter>
-                <action android:name="riku"/>
+                <action android:name="riku" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="miaomiaomiao" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ThirdActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="miaomiaomiao"/>
+                <data android:scheme="http"/>
             </intent-filter>
         </activity>
     </application>
