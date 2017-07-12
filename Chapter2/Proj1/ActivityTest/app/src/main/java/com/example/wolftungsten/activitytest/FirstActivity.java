@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,11 +23,22 @@ public class FirstActivity extends AppCompatActivity {
             public void onClick(View v){
                 String data = "Hello Activity！";
                 Intent intent =new Intent(FirstActivity.this, SecondActivity.class);
-                intent.putExtra("data", data);
-                startActivity(intent);
-
+                startActivityForResult(intent, 1);
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode){
+            case 1:
+                if(resultCode == RESULT_OK)
+                {
+                    String returnData = data.getStringExtra("Data return");
+                    Log.d("FirstActivity",returnData);
+                }
+        }
     }
 
     @Override
@@ -34,6 +46,7 @@ public class FirstActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
